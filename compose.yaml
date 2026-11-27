@@ -1,0 +1,13 @@
+# Para probar localmente con Docker: docker compose up -d --build
+services:
+  web:
+    build: .
+    ports:
+      - "4321:4321"
+    env_file: .env
+    volumes:
+      - hunova-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  hunova-data:
